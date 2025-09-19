@@ -32,16 +32,16 @@ assistant: Agent = Agent(
     tools=[weather]
 )
 
-# print(assistant.handoffs)
+print(assistant.handoffs)
 
 def main():
     result: Runner = Runner.run_sync(
         assistant,
         "What is the weather in karachi? and 2+10=?",
-        context={"name": "Areeba Hammad", "age": 2, "role": "student"}
+        context={"name": "Areeba Hammad", "age": 20, "role": "student"}
     )
 
-    print(result.last_agent.name)
+    print(result.last_agent)
     print(result.final_output)
 
 if __name__ == "__main__":
